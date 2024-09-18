@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="design/style.css">
+        <script src="script/config.js" defer></script> 
+        <script src="script/script.js" defer></script>
+        <script src="script/main.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+
+            <h1>AzerType  </h1>
+        </header>
+        <main>
+            <div id="leJeu">
+                <h2>Le Jeu</h2>
+                    <div class="choix">
+                        <input type="radio" id="Phrases" name="typeJeu" value="Phrases" checked>
+                        <label for="Phrases">Phrases</label>
+                        <input type="radio" id="Mots" name="typeJeu" value="Mots"/>
+                        <label for="Mots">Mots</label>
+                    </div>
+                    <div id="printWords">
+                        <p>Mon Mot avec moidsd</p>
+                    </div>
+                    <div>
+                        <form action="">
+                            <input type="text" id="reponse" name="reponse">
+                            <input type="submit" id="envoyer" value="Envoyer">
+                        </form>
+                    </div>
+                    <div>
+                        <p id="score">Score : <span>0</span> </p>
+                    </div>
+            </div>
+        </main>
+        <footer>
+            @Copyright : MoiLeBoss.
+        </footer>
+
+    </body>
+
+
+</html>

@@ -1,0 +1,26 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+}
+#leJeu{
+    border-radius: 23px;
+    background-color: #FFB703;
+    padding: 30px;
+    margin: 10px;
+}
+#printWords{
+    padding: 20px;
+    margin: 20px;
+    border-radius: 23px;
+    background-color: white;
+}
+.choix{
+    margin: 30px;
+}
+
+footer{
+    margin: 10px;
+    padding: 20px;
+    background-color: #FFB703;
+    border-radius: 23px;
+}
