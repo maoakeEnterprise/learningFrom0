@@ -8,18 +8,18 @@ function getValueFromUser(){
     let value
     validateButton.addEventListener("click", () => {
         value = answerUser.value
-        scoreEvolution(value,listMot[compteur],listMot)
+        scoreEvolution(value,stockTabGame[compteur],stockTabGame)
         answerUser.value = ""
         console.log(value)
         compteur++
         console.log(compteur)
-        afficherProposition(listMot[compteur])
+        afficherProposition(stockTabGame[compteur])
     })
 }
 
 function afficherProposition(mot){
     let switchWord = document.querySelector("#printWords p")
-    if(compteur >= listMot.length){
+    if(compteur >= stockTabGame.length){
         switchWord.innerText = "Jeu fini"
         validateButton.disabled = true
     }
@@ -29,9 +29,9 @@ function afficherProposition(mot){
 }
 
 function initGame(){
-    let switchWord = document.querySelector("#printWords p")
-    afficherResultat(score,listMot.length)
-    switchWord.innerText = listMot[compteur]
+    verifTypeGame()
+    afficherResultat(score,stockTabGame.length)
+    afficherProposition(stockTabGame[compteur])
 }
 
 function scoreEvolution(userWord, computerWord, listGame){
@@ -42,7 +42,28 @@ function scoreEvolution(userWord, computerWord, listGame){
         return true
 }
 
+function verifTypeGame(){
+    let valueRadio = ""
+    for(let i = 0; i < baliseRadio.length; i ++){
+        if(baliseRadio[i].checked){
+            valueRadio = baliseRadio[i].value
+            break
+        }
+    }
+    if(valueRadio == "Mots") stockTabGame = listMot
+    else stockTabGame = listPhrase
+}
+
+function changeTypeGame(){
+    for(radio in baliseRadio) {
+        baliseRadio[radio].onclick = function() {
+            initGame()
+        }
+    }
+}
+
 function lancerJeu() {
     initGame()
     getValueFromUser()
+    changeTypeGame()
 }
