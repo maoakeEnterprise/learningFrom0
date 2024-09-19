@@ -1,41 +1,48 @@
 function afficherResultat(resultat, nombreTotalDeMotsProposes){
-    console.log("Voici votre score actuellement: "+ score +"avec ce nombre de mots : " + nombreTotalDeMotsProposes)
+    let scoreElement = document.getElementById("scoreNumber")
+    scoreElement.innerText = `${resultat} / ${nombreTotalDeMotsProposes}`
+
 }
 
-function choisirPhrasesOuMots() {
-    let choixDuJoueur = true
-    let reponseJoueur
-    while(choixDuJoueur){
-        reponseJoueur = prompt("Type de jeu Phrases ou Mots (Phrases/Mots) : ")
-        if(reponseJoueur === "Phrases" || reponseJoueur === "Mots"){
-            choixDuJoueur = false
-            if(reponseJoueur === "Phrases"){
-                return listPhrase
-            }
-            else if(reponseJoueur === "Mots"){
-                return listMot
-            }
-        }
+function getValueFromUser(){
+    let value
+    validateButton.addEventListener("click", () => {
+        value = answerUser.value
+        scoreEvolution(value,listMot[compteur],listMot)
+        answerUser.value = ""
+        console.log(value)
+        compteur++
+        console.log(compteur)
+        afficherProposition(listMot[compteur])
+    })
+}
+
+function afficherProposition(mot){
+    let switchWord = document.querySelector("#printWords p")
+    if(compteur >= listMot.length){
+        switchWord.innerText = "Jeu fini"
+        validateButton.disabled = true
+    }
+    else{
+        switchWord.innerText = mot
     }
 }
 
-function lancerBoucleDeJeu(tableauDuJeu) {
+function initGame(){
+    let switchWord = document.querySelector("#printWords p")
+    afficherResultat(score,listMot.length)
+    switchWord.innerText = listMot[compteur]
+}
 
-    let score = 0
-    let reponseJoueur
-    
-    for (let i = 0; i < tableauDuJeu.length; i++) {
-        const element = tableauDuJeu[i];
-        reponseJoueur = prompt("Entrer le mot " + tableauDuJeu[i])
-        if(reponseJoueur === tableauDuJeu[i]){
-            score++
-        }
+function scoreEvolution(userWord, computerWord, listGame){
+    if(userWord === computerWord){
+        score++
+        afficherResultat(score, listGame.length)
     }
-    return score
+        return true
 }
 
 function lancerJeu() {
-    let tableauChoisis = choisirPhrasesOuMots()
-    let score = lancerBoucleDeJeu(tableauChoisis)
-    afficherResultat(score, tableauChoisis)
+    initGame()
+    getValueFromUser()
 }
