@@ -1,0 +1,10 @@
+.popUpPartage{
+    position: relative;
+    bottom: 300px;
+    background-color: red;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    border-radius: 23px;
+}

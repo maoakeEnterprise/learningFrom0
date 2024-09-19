@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="design/style.css">
+        <link rel="stylesheet" href="design/popUp.css">
         <script src="script/config.js" defer></script> 
         <script src="script/script.js" defer></script>
         <script src="script/main.js" defer></script>
@@ -38,11 +39,26 @@
                     <div>
                         <p id="score">Score : <span id ="scoreNumber">0</span> </p>
                     </div>
+                    <div>
+                    <button id="partager">Partager</button>
+                    </div>
             </div>
         </main>
         <footer>
             @Copyright : MoiLeBoss.
         </footer>
+
+        <div class="popUpPartage">
+            <div class="popUp">
+                <form>
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Votre nom">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Votre email">
+                    <button>Envoyer</button>
+                </form>
+            </div>
+        </div>
 
     </body>
 
