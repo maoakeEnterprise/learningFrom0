@@ -63,15 +63,29 @@ function changeTypeGame(){
 }
 
 function afficherEmail(){
-    let divPopUp = document.getElementsByClassName("popUpPartage")
+    
     shareButton.addEventListener("click", () => {
-        console.log("test")
         divPopUp.removeAttribute("hidden")
+    })
+}
+
+function partagerScore(){
+    sendButton.addEventListener("submit", (event) => {
+        event.preventDefault()
+        let baliseNom = document.getElementById("nom")
+        let nom = baliseNom.value
+        
+        let baliseMail = document.getElementById("email")
+        let mail = baliseMail.value
+
+        console.log(mail+" "+nom)
+        divPopUp.hidden = "true"
     })
 }
 
 function lancerJeu() {
     afficherEmail()
+    partagerScore()
     initGame()
     getValueFromUser()
     changeTypeGame()

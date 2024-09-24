@@ -11,3 +11,5 @@ let compteur = 0
 let score = 0
 
 let baliseRadio = document.querySelectorAll('input[name="typeJeu"]')
+let divPopUp = document.getElementById("popUpParta")
+let sendButton = document.querySelector("form")
