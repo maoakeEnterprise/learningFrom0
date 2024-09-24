@@ -6,6 +6,7 @@ let stockTabGame
 
 let answerUser = document.getElementById("reponse")
 let validateButton = document.getElementById("envoyer")
+let shareButton = document.getElementById("partager")
 let compteur = 0
 let score = 0
 

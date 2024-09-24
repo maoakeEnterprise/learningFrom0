@@ -62,7 +62,16 @@ function changeTypeGame(){
     }
 }
 
+function afficherEmail(){
+    let divPopUp = document.getElementsByClassName("popUpPartage")
+    shareButton.addEventListener("click", () => {
+        console.log("test")
+        divPopUp.removeAttribute("hidden")
+    })
+}
+
 function lancerJeu() {
+    afficherEmail()
     initGame()
     getValueFromUser()
     changeTypeGame()
